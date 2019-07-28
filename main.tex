@@ -6,6 +6,10 @@
 \usepackage{graphicx}
 \usepackage{subfigure}
 \usepackage{listings}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
 \title{Encoding Selection for Solving Hamiltonian Cycle Problems with ASP}
 \author{
 Liu Liu \qquad\qquad Miroslaw Truszczynski
@@ -200,23 +204,107 @@ method to build a collection of 784 reasonably hard instances.\footnote{The grap
 can be downloaded from \url{http://cs.uky.edu/~lli259/encodingselection}}
 
 
-\begin{figure}
+\begin{figure}[!ht]
 \centering
+\begin{tikzpicture}
 
-\begin{subfigure}
-\centering
-\includegraphics[width=0.15\textwidth]{gridins.png}
-\end{subfigure}
-\begin{subfigure}
-\centering
-\includegraphics[ width=0.15\textwidth]{gridholeins.png}
-\end{subfigure}
-\begin{subfigure}
-\centering
-\includegraphics[ width=0.15\textwidth]{triangle.png}
-\end{subfigure}
-\caption{Structured instances: regular grid graph, regular grid graph with hole, regular triangular graph with cutting area }\label{fig2}
+%square
+\path [-] (0,0) edge (2,0);
+\path [-] (0,0.25) edge (2,0.25);
+\path [-] (0,0.5) edge (2,0.5);
+\path [-] (0,0.75) edge (2,0.75);
+\path [-] (0,1) edge (2,1);
+\path [-] (0,1.25) edge (2,1.25);
+\path [-] (0,1.5) edge (2,1.5);
+\path [-] (0,1.75) edge (2,1.75);
+\path [-] (0,2) edge (2,2);
+
+\path [-] (0,0) edge (0,2);
+\path [-] (0.25,0) edge (0.25,2);
+\path [-] (0.5,0) edge (0.5,2);
+\path [-] (0.75,0) edge (0.75,2);
+\path [-] (1,0) edge (1,2);
+\path [-] (1.25,0) edge (1.25,2);
+\path [-] (1.5,0) edge (1.5,2);
+\path [-] (1.75,0) edge (1.75,2);
+\path [-] (2,0) edge (2,2);
+
+%square with hole
+\path [-] (3,0) edge (5,0);
+\path [-] (3,0.25) edge (5,0.25);
+\path [-] (3,0.5) edge (5,0.5);
+\path [-] (3,0.75) edge (3.5,0.75);
+\path [-] (4.5,0.75) edge (5,0.75);
+\path [-] (3,1) edge (3.5,1);
+\path [-] (4.5,1) edge (5,1);
+\path [-] (3,1.25) edge (3.5,1.25);
+\path [-] (4.5,1.25) edge (5,1.25);
+\path [-] (3,1.5) edge (5,1.5);
+\path [-] (3,1.75) edge (5,1.75);
+\path [-] (3,2) edge (5,2);
+
+\path [-] (3,0) edge (3,2);
+\path [-] (3.25,0) edge (3.25,2);
+\path [-] (3.5,0) edge (3.5,2);
+\path [-] (3.75,0) edge (3.75,0.5);
+\path [-] (3.75,1.5) edge (3.75,2);
+\path [-] (4,0) edge (4,0.5);
+\path [-] (4,1.5) edge (4,2);
+\path [-] (4.25,0) edge (4.25,0.5);
+\path [-] (4.25,1.5) edge (4.25,2);
+\path [-] (4.5,0) edge (4.5,2);
+\path [-] (4.75,0) edge (4.75,2);
+\path [-] (5,0) edge (5,2);
+
+%triangle
+\path [-] (6,0) edge (8,0);
+\path [-] (6.125,0.2) edge (7.875,0.2);
+\path [-] (6.25,0.4) edge (7.75,0.4);
+\path [-] (6.375,0.6) edge (7.625,0.6);
+\path [-] (6.5,0.8) edge (7.5,0.8);
+\path [-] (6.625,1) edge (7.375,1);
+
+\path [-] (6.625,1) edge (6,0);
+\path [-] (6.875,1) edge (6.25,0);
+\path [-] (7.125,1) edge (6.5,0);
+\path [-] (7.375,1) edge (6.75,0);
+\path [-] (7.5,0.8) edge (7,0);
+\path [-] (7.625,0.6) edge (7.25,0);
+\path [-] (7.75,0.4) edge (7.5,0);
+\path [-] (7.875,0.2) edge (7.75,0);
+
+\path [-] (7.375,1) edge (8,0);
+
+\path [-] (6.125,0.2) edge (6.25,0);
+\path [-] (6.25,0.4) edge (6.5,0);
+\path [-] (6.375,0.6) edge (6.75,0);
+\path [-] (6.5,0.8) edge (7,0);
+\path [-] (6.625,1) edge (7.25,0);
+\path [-] (6.875,1) edge (7.5,0);
+\path [-] (7.125,1) edge (7.75,0);
+\end{tikzpicture}
+\caption{Structured instances: regular grid graph, regular grid graph with 
+a hole, regular triangular graph with cutting area }\label{fig2}
+
 \end{figure}
+
+%\begin{figure}
+%\centering
+%
+%\begin{subfigure}
+%\centering
+%\includegraphics[width=1in]{gridins.png}
+%\end{subfigure}
+%\begin{subfigure}
+%\centering
+%\includegraphics[ width=1in]{gridholeins.png}
+%\end{subfigure}
+%\begin{subfigure}
+%\centering
+%\includegraphics[ width=1in]{triangle.png}
+%\end{subfigure}
+%\caption{Structured instances: regular grid graph, regular grid graph with hole, regular triangular graph with cutting area }\label{fig2}
+%\end{figure}
 
 
 
